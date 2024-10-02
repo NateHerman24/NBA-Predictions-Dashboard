@@ -27,7 +27,7 @@ def calculate_team_sum(df, team, excluded_players):
     return team_data['Rating'].sum()
 
 # Main app structure
-st.title("NBA Player Rating Dashboard")
+st.title("NBA Predictions Dashboard")
 
 # Sidebar for metric selection
 metric_choice = st.sidebar.selectbox("Select Metric", options=list(metrics.keys()))
@@ -73,6 +73,6 @@ if team_1 and team_2:
         if team_1_sum > team_2_sum:
             st.write(f"{team_1} is predicted to win with a difference of {difference:.2f}!")
         elif team_1_sum < team_2_sum:
-            st.write(f"{team_2} is predicted to win with a differnence of {difference:.2f}!")
+            st.write(f"{team_2} is predicted to win with a difference of {difference:.2f}!")
         else:
             st.write("It's a tie!")
