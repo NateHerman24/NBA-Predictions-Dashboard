@@ -36,7 +36,7 @@ metric_choice = st.sidebar.selectbox("Select Metric", options=list(metrics.keys(
 metric_df = metrics[metric_choice]
 
 # Display team options and sum calculations for two teams
-st.header(f"Team Rating Comparison for {metric_choice}")
+st.header(f"Team Rating Comparison Using {metric_choice}")
 
 # Select two teams to compare
 teams = metric_df['Team'].unique()
