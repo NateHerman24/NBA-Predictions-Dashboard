@@ -62,9 +62,6 @@ if team_1 and team_2:
     team_1_sum = calculate_team_sum(metric_df, team_1, excluded_team_1)
     team_2_sum = calculate_team_sum(metric_df, team_2, excluded_team_2)
 
-    st.write(f"Total rating for {team_1} (excluding selected players): {team_1_sum}")
-    st.write(f"Total rating for {team_2} (excluding selected players): {team_2_sum}")
-
 # Calculate the difference between the two team sums
     difference = abs(team_1_sum - team_2_sum)
 
