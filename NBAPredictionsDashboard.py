@@ -31,7 +31,7 @@ def calculate_total_team_ratings(df):
     return df.groupby('Team')['Rating'].sum().reset_index()
 
 # Main app structure
-st.title("NBA Player Rating Dashboard")
+st.title("NBA Predictions Dashboard")
 
 # Sidebar for metric selection
 metric_choice = st.sidebar.selectbox("Select Metric", options=list(metrics.keys()))
