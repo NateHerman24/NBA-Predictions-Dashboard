@@ -105,7 +105,7 @@ st.table(total_team_ratings[['Team', 'Rating']])
 st.header(f"Top Players by Rating for {metric_choice}")
 
 # Allow user to select how many top players to display
-num_players = st.slider("Select the number of top players to display", min_value=1, max_value=100, value=10)
+num_players = st.slider("Select the number of top players to display", min_value=1, max_value=240, value=10)
 
 # Sort the players by rating in descending order and select the top N players
 top_players = metric_df.sort_values(by='Rating', ascending=False).head(num_players)
