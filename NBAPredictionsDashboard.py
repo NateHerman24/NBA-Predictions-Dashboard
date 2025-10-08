@@ -8,16 +8,18 @@ def load_data():
     metric_2 = pd.read_csv('darko.csv')
     metric_3 = pd.read_csv('winshares.csv')
     metric_4 = pd.read_csv('cavdaws.csv')
-    return metric_1, metric_2, metric_3, metric_4
+    metric_5 = pd.read_csv('pbp.csv')
+    return metric_1, metric_2, metric_3, metric_4, metric_5
 
-metric_1, metric_2, metric_3, metric_4 = load_data()
+metric_1, metric_2, metric_3, metric_4, metric_5 = load_data()
 
 # Dictionary to map metric names to dataframes
 metrics = {
     "VORP": metric_1,
     "DARKO": metric_2,
     "Win Shares": metric_3,
-    "CAVDAWS": metric_4
+    "CAVDAWS": metric_4,
+    "PBP": metric_5
 }
 
 # Function to calculate the sum of ratings by team, excluding selected players
@@ -119,3 +121,4 @@ top_players['Rating'] = top_players['Rating'].map(lambda x: f"{x:.1f}")
 
 # Display the top players in a table
 st.table(top_players[['Name', 'Team', 'Rating']])
+
