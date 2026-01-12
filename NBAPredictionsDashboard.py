@@ -5,23 +5,19 @@ import pandas as pd
 @st.cache_data
 def load_data():
     metric_1 = pd.read_csv('vorp.csv')
-    metric_2 = pd.read_csv('darko.csv')
-    metric_3 = pd.read_csv('winshares.csv')
-    metric_4 = pd.read_csv('cavdaws.csv')
-    metric_5 = pd.read_csv('epm.csv')
-    metric_6 = pd.read_csv('netpoints.csv')
-    return metric_1, metric_2, metric_3, metric_4, metric_5, metric_6
+    metric_2 = pd.read_csv('winshares.csv')
+    metric_3 = pd.read_csv('cavdaws.csv')
+    metric_4 = pd.read_csv('netpoints.csv')
+    return metric_1, metric_2, metric_3, metric_4
 
-metric_1, metric_2, metric_3, metric_4, metric_5, metric_6 = load_data()
+metric_1, metric_2, metric_3, metric_4 = load_data()
 
 # Dictionary to map metric names to dataframes
 metrics = {
     "VORP": metric_1,
-    "DARKO": metric_2,
-    "Win Shares": metric_3,
-    "CAVDAWS": metric_4,
-    "EPM": metric_5,
-    "ESPN Net Points": metric_6
+    "Win Shares": metric_2,
+    "CAVDAWS": metric_3,
+    "ESPN Net Points": metric_4
 }
 
 # Function to calculate the sum of ratings by team, excluding selected players
@@ -123,6 +119,7 @@ top_players['Rating'] = top_players['Rating'].map(lambda x: f"{x:.1f}")
 
 # Display the top players in a table
 st.table(top_players[['Name', 'Team', 'Rating']])
+
 
 
 
